@@ -1,0 +1,28 @@
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+    <h1>LISTA DE CLIENTES</h1>
+    <button class="btn btn-primary my-2" routerLink="/clientes/agregar">Agregar Nuevo</button>
+    <table class="table table-light border text-center">
+        <thead>
+            <tr>
+                <th>NRO. CUENTA</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>DNI</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes">
+                <td>{{ cliente.n_cuenta }}</td>
+                <td>{{ cliente.nombre }}</td>
+                <td>{{ cliente.apellido }}</td>
+                <td>{{ cliente.dni }}</td>
+                <td>
+                    <button class="btn btn-success" [routerLink]="['/clientes', cliente.n_cuenta]">Editar</button>
+                    <button class="btn btn-danger ms-1" (click)="eliminar(cliente.n_cuenta)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

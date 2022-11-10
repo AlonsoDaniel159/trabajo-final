@@ -1,0 +1,22 @@
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+    <h1 class="my-4">{{ titulo }}</h1>
+    <form>
+        <div class="mb-2">
+            <label for="fecha" class="form-label">FECHA</label>
+            <input type="date" class="form-control" [(ngModel)]="retiro.fecha" name="fecha" id="fecha">
+        </div>
+        <div class="mb-2">
+            <label for="monto" class="form-label">MONTO</label>
+            <input type="number" class="form-control" [(ngModel)]="retiro.monto" name="monto" id="monto">
+        </div>
+        <div class="mb-4">
+            <label for="cliente" class="form-label">CLIENTE</label>
+            <select [(ngModel)]="retiro.cliente" name="cliente" class="form-select">
+                <option *ngIf="retiro.cod_ret==0" value="0" selected>Selecciona un cliente</option>
+                <option *ngFor="let cliente of clientes" [value]="cliente.n_cuenta">{{ cliente.n_cuenta }}</option>
+            </select>        </div>
+        <button class="btn btn-success w-100 mb-2" (click)="agregar()">{{ boton }}</button>
+        <button class="btn btn-secondary w-100" routerLink="/depositos">Regresar</button>
+    </form>
+</div>

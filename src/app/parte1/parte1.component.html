@@ -1,0 +1,19 @@
+<br>
+<div class="contenedor">
+    
+    <h1 class="card-title">{{titulo}}</h1>
+    <mat-form-field>
+        <input matInput [(ngModel)]="usu" type="text" placeholder="Ingrese Usuario">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput [(ngModel)]="pass" type="text" placeholder="Ingrese Password">
+    </mat-form-field>
+   
+    <button mat-raised-button color="primary" (click)="login()">Login</button>
+    <br>
+    <button mat-raised-button color="primary" (click)="cancelar()">Cancelar</button>
+    <br>
+    <p>EL USUARIO: {{resultado}}</p>
+
+</div>
+

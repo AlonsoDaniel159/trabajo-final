@@ -1,0 +1,24 @@
+<app-sidebar></app-sidebar>
+<div class="container mt-5">
+    <h1 class="my-4">{{ titulo }}</h1>
+    <form>
+        <div class="mb-4">
+            <label for="email" class="form-label">NRO. CUENTA</label>
+            <input type="email" class="form-control" [(ngModel)]="cliente.n_cuenta" name="email" id="n_cuenta" maxlength="10">
+        </div>
+        <div class="mb-2">
+            <label for="nombre" class="form-label">NOMBRE</label>
+            <input type="text" class="form-control" [(ngModel)]="cliente.nombre" name="nombre" id="nombre">
+        </div>
+        <div class="mb-2">
+            <label for="apellido" class="form-label">APELLIDO</label>
+            <input type="text" class="form-control" [(ngModel)]="cliente.apellido" name="apellido" id="apellido">
+        </div>
+        <div class="mb-4">
+            <label for="email" class="form-label">DNI</label>
+            <input type="email" class="form-control" [(ngModel)]="cliente.dni" name="email" id="dni" maxlength="8">
+        </div>
+        <button class="btn btn-success w-100 mb-2" (click)="agregar()">{{ boton }}</button>
+        <button class="btn btn-secondary w-100" routerLink="/clientes">Regresar</button>
+    </form>
+</div>
